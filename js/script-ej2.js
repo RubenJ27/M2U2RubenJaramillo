@@ -6,14 +6,32 @@ verificar que los cuatro valores introducidos por el teclado sean valores distin
 h. Crear un mensaje de alerta en caso que se detecte la introducción de valores iguales.*/
 
 
+let $form = document.getElementById("container__validator__form");
+let $valueOne = document.getElementById("numOne");
+let $valueTwo = document.getElementById("numTwo");
+let $valueThree = document.getElementById("numThree");
+let $valueFour = document.getElementById("numFour");
 
-let valueOne = document.getElementById("numOne");
-let valueTwo = document.getElementById("numTwo");
-let valueThree = document.getElementById("numThree");
-let valueFour = document.getElementById("numFour");
+let $btnValidator = document.getElementById("btn__validator");
 
-let valueBtn = document.getElementById("btn__validator");
-let valueBtnclean = document.getElementById("btn__clean");
+let $btnClean = document.getElementById("btn__clean");
+
+document.addEventListener("submit", e=> {
+
+  if (e.target === $form) {
+    e.preventDefault();
+    console.log("start")
+  }
+});
+
+document.addEventListener("click", e=> {
+  if (e.target === $form.cerrar) {
+    $valueOne.value = "";
+    $valueTwo.value = "";
+    $valueThree.value = "";
+    $valueFour.value = "";
+  }
+});
 
 
 
