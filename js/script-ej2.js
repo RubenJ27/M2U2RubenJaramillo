@@ -17,10 +17,12 @@ let $btnClean = document.getElementById("btn__clean");
 
 document.addEventListener("submit", (e) => {
   e.preventDefault();
-  let A = $valueAone.value;
-  let B = $valueBtwo.value;
-  let C = $valueCthree.value;
-  let D = $valueDfour.value;
+  
+  let A = parseInt($valueAone.value);
+      let B = parseInt($valueBtwo.value);
+      let C = parseInt($valueCthree.value);
+      let D = parseInt($valueDfour.value);
+  
 
   if (e.target === $form) {
     if (
@@ -43,7 +45,7 @@ document.addEventListener("submit", (e) => {
         D ===
           "" /*<=Esta linea se encarga de validar que ningun campo este vacio*/
       ) {
-        if (A === "" || B === "" || C === "" || D === "") {
+        if ((A === "" || B === "" || C === "" || D === "")) {
           /*Este if se encarga de validar que ningun campo este vacio*/
           alert(
             `Porfavor valide que ninguno de los campos este vacio para obtener el resultado correctamente`
@@ -56,12 +58,6 @@ document.addEventListener("submit", (e) => {
         }
       } else {
         /*Este else es para validar ningun valor sea igual al otro, entre parejas y trios de variables*/
-        console.log(`A = ${A}`);
-        console.log(`B = ${B}`);
-        console.log(`C = ${C}`);
-        console.log(`D = ${D}`);
-        console.log(D);
-        console.log("active");
 
         if (
           (A === B && A === C) ||
@@ -112,14 +108,91 @@ document.addEventListener("submit", (e) => {
           }
         }
       }
-    } else {
-      /*Este es el else principal */
-      console.log(`A = ${A}`);
-      console.log(`B = ${B}`);
-      console.log(`C = ${C}`);
-      console.log(`D = ${D}`);
+    } else /*Este es el else principal */{
+      /*En esta seccion estan los if anidados que validan cual es el valor mayor y menor */
+      let numMayor;
+      if ((isNaN(A) || isNaN(B) || isNaN(C) || isNaN(D))) {
+        /*Este if se encarga de validar que ningun campo este vacio*/
+        alert(
+          `Porfavor valide que ninguno de los campos este vacio para obtener el resultado correctamente`
+        );
+      }else if (A > B && A > C && A > D) /*Estos if anidados comprueban si el valor de A es mayor */ {
+        let numMayor = A;
+        alert(`El numero mayor es ${numMayor}`);
+
+        if (A < B && A < C && A < D) /*Estos if anidados comprueban si el valor de A es menor */ {
+          let numMayor = A;
+          alert(`El numero menor es ${numMayor}`);
+        } else {
+          if (B < A && B < C && B < D) /*Estos if anidados comprueban si el valor de B es menor */{
+            let numMayor = B;
+          alert(`El numero menor es ${numMayor}`);
+          }else {
+            if (C < A && C < B && C < D) /*Estos if anidados comprueban si el valor de C es menor */{
+              let numMayor = C;
+            alert(`El numero menor es ${numMayor}`);
+            }else if(D < A && D < B && D < C){
+              let numMayor = D;
+              alert(`El numero menor es ${numMayor}`);
+            }
+        }
+      }
+
+      } else if(B > A && B > C && B > D) /*Estos if anidados comprueban si el valor de B es mayor */{
+        let numMayor = B;
+        alert(`El numero mayor es ${numMayor}`);
+        if (A < B && A < C && A < D) /*Estos if anidados comprueban si el valor de A es menor */{
+          let numMayor = A;
+        alert(`El numero menor es ${numMayor}`);
+        }else {
+          if (C < A && C < B && C < D) /*Estos if anidados comprueban si el valor de C es menor */{
+            let numMayor = C;
+          alert(`El numero menor es ${numMayor}`);
+          }else if(D < A && D < B && D < C){
+            let numMayor = D;
+            alert(`El numero menor es ${numMayor}`);
+          }   
+      }
+    }else if(C > A && C > B && C > D) /*Estos if anidados comprueban si el valor de C es mayor */{
+      let numMayor = C;
+      alert(`El numero mayor es ${numMayor}`);
+      if (A < B && A < C && A < D) /*Estos if anidados comprueban si el valor de A es menor */{
+        let numMayor = A;
+      alert(`El numero menor es ${numMayor}`);
+      }else {
+        if (B < A && B < C && B < D) /*Estos if anidados comprueban si el valor de C es menor */{
+          let numMayor = B;
+        alert(`El numero menor es ${numMayor}`);
+        }else if(D < A && D < B && D < C){
+          let numMayor = D;
+          alert(`El numero menor es ${numMayor}`);
+        }   
+    }
+  }else /*Estos if anidados comprueban si el valor de D es mayor */{
+        let numMayor = D;
+        alert(`El numero mayor es ${numMayor}`);
+        if (A < B && A < C && A < D) /*Estos if anidados comprueban si el valor de A es menor */ {
+          let numMayor = A;
+          alert(`El numero menor es ${numMayor}`);
+        } else {
+          if (B < A && B < C && B < D) /*Estos if anidados comprueban si el valor de B es menor */{
+            let numMayor = B;
+          alert(`El numero menor es ${numMayor}`);
+          }else {
+            if (C < A && C < B && C < D) /*Estos if anidados comprueban si el valor de C es menor */{
+              let numMayor = C;
+            alert(`El numero menor es ${numMayor}`);
+            }else if(D < A && D < B && D < C){
+              let numMayor = D;
+              alert(`El numero menor es ${numMayor}`);
+            }
+        }
+      }
+  }
+
     }
   }
+      
 });
 
 document.addEventListener("click", (e) => {
