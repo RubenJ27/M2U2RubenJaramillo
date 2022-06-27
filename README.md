@@ -1,5 +1,5 @@
 # M2U2RubenJaramillo
-Actividad de realizacion de diagramas de flujo y su respectivo algoritmo para cada solucion de ejericicio
+Actividad de realizacion de diagramas de flujo y su respectivo algoritmo para cada solucion de ejercicio
 
 <h1><p align="center">Diagramas de flujo</p></h1>
 
