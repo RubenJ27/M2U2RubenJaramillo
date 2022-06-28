@@ -19,7 +19,8 @@ descuento del 20% más los costos fijos.<br/>
 </h3>
 
 
-![M2U2E2RubenJaramillo](https://user-images.githubusercontent.com/54613714/175616265-ff472ce6-1fae-4c7a-a8a1-86559ffb2e9e.jpg)
+![M2U2E1RubenJaramillo](https://user-images.githubusercontent.com/54613714/176080773-fc5d865a-497b-4bdd-adcb-d17441bebbf9.jpg)
+
 
 
 <h3 align = "center">
