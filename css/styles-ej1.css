@@ -14,3 +14,8 @@
   text-decoration: none;
   letter-spacing: 0.080rem;
 }
+
+hr{
+  width: 100%;
+  margin: 3.3rem 0;
+}
