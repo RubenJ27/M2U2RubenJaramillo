@@ -16,21 +16,49 @@ let $btnValidator = document.getElementById("btn__validator");
 
 let $btnClean = document.getElementById("btn__clean");
 
+let valueStationely = parseFloat(20.0) * 1000;
+let valueLicense = parseFloat(8.0) * 1000;
+let materialCost = parseFloat(150.0) * 1000;
 
+function storeNomest() /*Con esta funcion mostramos el valor de cada materia ya preestablecido*/{
+  let nomEstvalue = $nomEst.value;
+  if (nomEstvalue.length > 3) {
+    alert(`El valor de cada asignatura es de $150.000`);
+  } else {
+    alert(`El campo no puede estar vacio porfavor introduzca un nombre`);
+  }
+}
 document.addEventListener("submit", (e) => {
   e.preventDefault();
-
-  let nomEstvalue = $nomEst.value;
   let asigMatvalue = parseInt($asigMat.value);
+  let nomEstvalue = $nomEst.value;
 
   if (e.target === $form) {
-    console.log(A)
+    if (!isNaN(asigMatvalue)) {
+      console.log(nomEstvalue);
+      alert(
+        `Valor de la papelería: que tiene un costo fijo de $20.000 y el carné con valor de $8.000.`
+      );
+      alert(
+        `Se aplicara un descuento del 20% sobre el costo de las materias, adicionalmente se le suma el valor de los costos fijos estos no tienen descuento.`
+      );
+      let resMatsindes = parseFloat((materialCost * asigMatvalue) / 100) * 100;
+      let resMatdes = resMatsindes - Math.floor(resMatsindes * 20) / 100;
+      let resMat = resMatdes + valueStationely + valueLicense;
+      alert(
+        `El total de las materias que matriculo el estudiante ${nomEstvalue} es de ${asigMatvalue} materias y el valor total de la matricula con el descuento del 20% es ${resMat} recuerde que este valor tambien se le agregan los costos fijos que no estan sujetos al descuento`
+      );
+    } else {
+      alert(
+        `Porfavor introduzca un valor numerico no se permiten campos vacios`
+      );
+    }
   }
 });
 
 document.addEventListener("click", (e) => {
   if (e.target === $form.cerrar) {
-    $valueAone.value = "";
-    $valueBtwo.value = "";
+    $nomEst.value = "";
+    $asigMat.value = "";
   }
 });
